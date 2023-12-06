@@ -123,9 +123,9 @@ onValue(chatRef, (snapshot) => {
     if (chatMessages.userName === currentUser) {
       // Display current user's message on the right
       displayChat.innerHTML += `
-      <div class="w-75 float-end">
-      <div class="bg-primary text-white w-25 float-end p-2 mb-2 rounded-3 bubble">
-      <p class="text-black fw-bold">${chatMessages.userName}</p>
+      <div class="w75 w-75 float-end">
+      <p class="text-black fw-bold w-25">${chatMessages.userName}</p>
+      <div class="bgprimary text-white w-25 float-end p-2 mb-2 rounded-3 bubble">
           <p>${chatMessages.chatHr}</p>
           <small class="float-end fw-bold">${chatMessages.time}</small>
         </div>
