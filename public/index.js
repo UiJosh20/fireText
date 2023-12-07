@@ -116,7 +116,6 @@ window.submitData = submitData;
 const chatRef = ref(database, 'chatMessages');
 onValue(chatRef, (snapshot) => {
   const chatMessages = snapshot.val();
-  displayChat.innerHTML = ''; // Clear previous messages
   onAuthStateChanged(auth, (user)=>{
     console.log(user.displayName);
     const currentUser = user.displayName
@@ -134,11 +133,13 @@ onValue(chatRef, (snapshot) => {
     } else {
       // Display other users' messages on the left
       displayChat.innerHTML += `
-        <div class="bg-secondary text-white w-75 p-2 mb-2">
-          <p>${chatMessages.userName}</p>
-          <h4>${chatMessages.chatHr}</h4>
-          <small>${chatMessages.time}</small>
+      <div class="w75 w-75 float-start">
+      <p class="text-danger fw-bold w-25">${chatMessages.userName}</p>
+      <div class="bg-light text-black w-25 float-start p-2 mb-2 rounded-3 bubble">
+          <p>${chatMessages.chatHr}</p>
+          <small class="float-start fw-bold text-black">${chatMessages.time}</small>
         </div>
+      </div>
       `;
     }
   })
