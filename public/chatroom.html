@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireText | Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="main2">
+      <div>
+        <h2>FIRETEXT</h2>
+      </div>
+      <div id="display"></div>
+    </main>
+    <section class="containerheight d-flex">
+      <main class="main1 p-1">
+        <div
+          class="w-100 chatgrid p-3 border-bottom d-flex justify-content-around align-items-center"
+          id="chatUsClick1" onclick="chatUsClick()"
+        >
+          <img
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios-filled/50/multicultural-people.png"
+            alt="multicultural-people"
+          />
+          <p class="text-black">LEVEL 2 PROJECT GROUP-CHAT</p>
+        </div>
+        <div class="w-100 chatgrid p-3 border-bottom"></div>
+      </main>
+      <main class="chatUs">
+        <div id="displayChat" class="wl100 p-3"></div>
+
+        <div class="bg-white w100 p-3">
+          <input type="text" id="chatH"/>
+          <button class="w-25 ms-2" onclick="submitData()">send</button>
+        </div>
+      </main>
+    </section>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
