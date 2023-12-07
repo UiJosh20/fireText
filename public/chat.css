@@ -27,6 +27,8 @@ h2 {
   background-color: rgb(148, 1, 1);
   color: white;
   height: 100px !important;
+  position: sticky;
+  top: 0px;
 }
 
 .containerheight{
@@ -110,7 +112,7 @@ h2 {
   word-wrap: break-word;
   height: auto;
   position: relative;
-  left: 240px;
+  right: 50px;
 }
 
 .bgprimary1{
