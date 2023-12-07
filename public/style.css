@@ -64,11 +64,11 @@ h2 {
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 650px;
+  top: 350px;
   
 }
 .w100>input{
-  width: 700px;
+  width: 300px;
   padding: 9px;
   outline: none;
   border-radius: 10px;
