@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FireText | Home</title>
-    <link rel="stylesheet" href="chat.css" />
+    <title>FireText | Newfeed</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,7 +18,7 @@
 
       <div class="w-100 d-flex align-items-center">
         <main id="" class="d-flex gap-2 w-75 justify-content-center gap-4">
-          <!-- <div class="w-75 d-flex gap-4">
+          <div class="w-75 d-flex gap-4">
             <input
               type="text"
               name=""
@@ -27,7 +27,7 @@
               placeholder="Write a post"
             />
             <button class="w-25" id="postMsgBtn">Post</button>
-          </div> -->
+          </div>
           <a href="newsfeed.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -56,18 +56,8 @@
       </div>
     </main>
 
+    <section id="displayPosts" class="mt-5"></section>
 
-    <section class="containerheight d-flex">
-      <main class="chatUs">
-        <div id="displayChat" class="wl100 p-3"></div>
-
-        <div class="bg-white w100 p-3">
-          <input type="text" id="chatH" class="w-50"/>
-          <button class="w-25 ms-2" onclick="submitData()">send</button>
-        </div>
-      </main>
-    </section>
-
-    <script type="module" src="chat.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

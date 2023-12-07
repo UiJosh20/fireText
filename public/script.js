@@ -32,7 +32,7 @@ const googleSignin = () => {
         sendEmailVerification(auth.currentUser).then(() => {
           console.log("Verification email sent!");
         });
-        window.location.href = "chatroom.html";
+        window.location.href = "newsfeed.html";
       } else {
         window.location.href = "index.html";
       }
@@ -72,7 +72,7 @@ const signinEmail = () => {
     .then((userCredential) => {
       const user = userCredential.user;
       console.log(user);
-      window.location.href ="chatroom.html";
+      window.location.href ="newsfeed.html";
     })
     .catch((error) => {
       let errorCode = error.code;
