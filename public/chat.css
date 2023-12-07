@@ -80,7 +80,7 @@ h2 {
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 450px;
+  bottom: 0px;
   
 }
 .w100>input{
