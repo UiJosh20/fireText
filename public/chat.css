@@ -6,7 +6,7 @@
 body,html{
   background-color: rgb(236, 235, 235) !important;
   width: auto;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 h3 {
@@ -103,7 +103,8 @@ h2 {
 
 .wl100{
   width: 100vw !important;
-  margin-bottom: 200px !important;
+  padding-bottom: 2000px !important;
+  overflow: scroll;
 }
 .w75>p{
   position: relative;
