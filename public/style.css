@@ -5,7 +5,7 @@
 }
 body,html{
   background-color: rgb(236, 235, 235) !important;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h3 {
