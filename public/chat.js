@@ -123,7 +123,7 @@ onValue(chatRef, (snapshot) => {
       displayChat.innerHTML += `
       <div class="w75 w-75 float-end">
       <div class="bgprimary text-white w-25 float-end p-2 mb-2 rounded-3 bubble">
-      <p class="text-white fw-bold w-100">${chatMessages.userName}</p>
+      <p class="text-white fw-bold w-100 nameing">${chatMessages.userName}</p>
           <p>${chatMessages.chatHr}</p>
           <small class="float-end fw-bold">${chatMessages.time}</small>
           <img src=${chatMessages.photo} style="border-radius: 100%;"  class="minus1" title="profile picture"/>  
