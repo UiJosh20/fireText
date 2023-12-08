@@ -145,8 +145,8 @@ onValue(chatRef, (snapshot) => {
     if (chatMessages.userName === currentUser) {
       // Display current user's message on the right
       displayChat.innerHTML += `
-      <div class="w75 w-75 float-end">
-      <div class="bgprimary text-white w-25 float-end p-2 mb-2 rounded-3 bubble">
+      <div class="w75 w-100 float-end">
+      <div class="bgprimary text-white w-75 float-end p-2 mb-2 rounded-3 bubble">
       <p class="text-white fw-bold w-100 nameing">${chatMessages.userName}</p>
           <p>${chatMessages.chatHr}</p>
           <small class="float-end fw-bold">${chatMessages.time}</small>
@@ -166,6 +166,18 @@ onValue(chatRef, (snapshot) => {
 
       </div>
       `;
+    }else if(chatMessages.userName == undefined){
+       // Display other users' messages on the left
+       displayChat.innerHTML += `
+       <div class="w75 w-100 float-start">
+       <div class="bg-light text-black w-75 float-start p-2 mb-2 rounded-3 bubble bgprimary1">
+       <p class="text-danger fw-bold w-100">${chatMessages.email}</p>
+           <p>${chatMessages.chatHr}</p>
+           <small class="float-start fw-bold text-black">${chatMessages.time}</small>
+           <img src=${chatMessages.photo} style="border-radius: 100%;"  class="minus2" title="profile picture"/>  
+         </div>
+       </div>
+       `;
     }
      else {
       // Display other users' messages on the left

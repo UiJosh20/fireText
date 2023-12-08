@@ -244,19 +244,28 @@ h2 {
   height: auto;
   position: relative;
   right: 20px;
-}
+  margin-top: 20px;
 
+}
+.bgprimary1{
+  max-width: 600px !important;
+  word-wrap: break-word;
+  height: auto;
+  position: relative;
+  left: 20px;
+  margin-top: 20px;
+}
 .minus1{
-  width: 10px;
+  width: 24px;
   border: 2px solid rgb(0, 84, 158);
   position: relative;
   left: -50px;
 }
 .minus2{
-  width: 10px;
+  width: 24px;
   border: 2px solid rgb(0, 84, 158);
   position: relative;
-  right: 120px;
+  right: 110px;
 }
 
 }
