@@ -3,8 +3,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import {
   getAuth,
-  GoogleAuthProvider,
   signInWithPopup,
+  GoogleAuthProvider,
   sendEmailVerification,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -41,7 +41,7 @@ const googleSignin = () => {
       let errorCode = error.code;
       console.log(errorCode);
       if (errorCode == "auth/account-exists-with-different-credential") {
-        showerr.innerHTML = `<p style="color:red; text-align:center;">A user is already signed in with that email</p>`;
+        showerr.innerHTML = `<p style="color:yellow; text-align:center;">A user is already signed in with that email</p>`;
         setTimeout(() => {
           showerr.style.display = "none";
         }, 3000);
@@ -63,7 +63,7 @@ const signinEmail = () => {
   yourEmail.value = "";
   yourPass.value = "";
   if (email == "" || password == "") {
-    showerr.innerHTML = `<p style="color:red; text-align:center;">Email and password cannot be left empty</p>`;
+    showerr.innerHTML = `<p style="color:yellow; text-align:center;">Email and password cannot be left empty</p>`;
     setTimeout(() => {
       showerr.style.display = "none";
     }, 4000);
@@ -78,7 +78,7 @@ const signinEmail = () => {
       let errorCode = error.code;
       console.log(errorCode);
       if (errorCode == "auth/invalid-login-credentials") {
-        showerr.innerHTML = `<p style="color:red; text-align:center;"> you have entered an invalid email and password</p>`;
+        showerr.innerHTML = `<p style="color:yellow; text-align:center;"> you have entered an invalid email and password</p>`;
         setTimeout(() => {
           showerr.style.display = "none";
           
@@ -97,10 +97,12 @@ window.signinEmail = signinEmail;
 const btnAll = () => {
   let email = yourOEmail.value;
   let password = yourOPass.value;
+  let identity = yourOName.value
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      user.displayName = identity
       console.log(user);
       window.location.href = "index.html";
     })
@@ -108,7 +110,7 @@ const btnAll = () => {
       let errorCode = error.code;
       console.log(errorCode);
       if (errorCode == "auth/email-already-in-use") {
-        showerr.innerHTML = `<p style="color:red; text-align:center;">This email already exists</p>`;
+        showerr.innerHTML = `<p style="color:yellow; text-align:center;">This email already exists</p>`;
         setTimeout(() => {
           showerr.style.display = "none";
         }, 4000);

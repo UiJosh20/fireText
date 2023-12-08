@@ -17,7 +17,7 @@
       <h2>FireText</h2>
 
       <div class="w-100 d-flex align-items-center">
-        <main id="" class="d-flex gap-2 w-75 justify-content-center gap-4">
+        <main id="" class="d-flex gap-2 w-75 justify-content-center gap-4 mainnning">
           <!-- <div class="w-75 d-flex gap-4">
             <input
               type="text"
@@ -59,13 +59,16 @@
 
     <section class="containerheight d-flex">
       <main class="chatUs">
-        <div id="displayChat" class="wl100 p-3 pb-5"></div>
 
-        <div class=" w100 p-3">
-          <input type="text" id="chatH" class="w-50"/>
-          <button class="w-25 ms-2" onclick="submitData()">send</button>
-        </div>
+        <div id="displayChat" class="wl100 p-3 pb-5"></div>
+        
+
       </main>
+      <div class=" w100 p-3">
+        <input type="text" id="chatH" class="w-75 w753" placeholder="Type your chat"/>
+        <img width="40" height="40" src="https://img.icons8.com/ios-glyphs/30/940101/sent.png" alt="sent" onclick="submitData()" class=" ms-5 mt-1"/>
+      <!-- <button class="" >send</button> -->
+      </div>
     </section>
 
     <script type="module" src="chat.js"></script>

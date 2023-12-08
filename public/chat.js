@@ -46,14 +46,16 @@ onAuthStateChanged(auth, (user) => {
     if (Cname == null && dispImg == null) {
       display.innerHTML = `
     <h3>${maily}</h3>
-    <img width="50" height="50" src="https://img.icons8.com/ios/50/logout-rounded--v1.png" alt="logout-rounded--v1"  onclick="googleSignOut()"/>
+    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/exit.png" alt="exit" onclick="googleSignOut()" />
+
       
       `;
     } else {
       display.innerHTML = `
       <h3>${Cname}</h3>
       <img src=${dispImg} style="border-radius: 100%;"  class="minus" title="profile picture"/>
-      <img width="50" height="50" src="https://img.icons8.com/ios/50/logout-rounded--v1.png" alt="logout-rounded--v1" alt="sign-out icon" width="35" onclick="googleSignOut()" title="sign out" class="signlogo"/>
+      <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/exit.png" alt="exit" onclick="googleSignOut()" />
+
 
     `;
     }
@@ -74,6 +76,13 @@ const googleSignOut = () => {
 
 window.googleSignOut = googleSignOut;
 
+
+const displayChat = document.getElementById('displayChat');
+const scrollToBottom = () => {
+  displayChat.scrollBottom = displayChat.scrollHeight;
+};
+
+
 const submitData = () => {
   let date = new Date().toLocaleDateString();
   let time = new Date().toLocaleTimeString();
@@ -81,17 +90,30 @@ const submitData = () => {
   onAuthStateChanged(auth, (user) => {
     let userName = user.displayName;
     let photo = user.photoURL;
+    let email = user.email;
     if (chatHr.trim() !== "") {
-      chatH.value = "";
-      let chatObj = {
-        photo,
-        userName,
-        chatHr,
-        date,
-        time,
-      };
-      let dbRef = ref(database, `chatMessages`);
-      set(dbRef, chatObj);
+      if (userName != null && photo != null){
+        chatH.value = "";
+        let chatObj = {
+          photo,
+          userName,
+          chatHr,
+          date,
+          time,
+        };
+        let dbRef = ref(database, `chatMessages`);
+        set(dbRef, chatObj);
+      }else{
+        chatH.value = "";
+        let chatObj = {
+          email,
+          chatHr,
+          date,
+          time,
+        };
+        let dbRef = ref(database, `chatMessages`);
+        set(dbRef, chatObj);
+      }
 
       // let filename = myFile.files[0].name;
       // let uploadedFile = myFile.files[0];
@@ -108,6 +130,7 @@ const submitData = () => {
       // });
     }
   });
+  scrollToBottom()
 };
 window.submitData = submitData
 
@@ -118,6 +141,7 @@ onValue(chatRef, (snapshot) => {
   onAuthStateChanged(auth, (user)=>{
     console.log(user.displayName);
     const currentUser = user.displayName
+    const currentEmail = user.email
     if (chatMessages.userName === currentUser) {
       // Display current user's message on the right
       displayChat.innerHTML += `
@@ -131,11 +155,23 @@ onValue(chatRef, (snapshot) => {
 
       </div>
       `;
-    } else {
+    }else if (chatMessages.email == currentEmail){
+      displayChat.innerHTML += `
+      <div class="w75 w-100 float-end">
+      <div class="bgprimary text-white w-75 float-end p-2 mb-2 rounded-3 bubble">
+      <p class="text-white fw-bold w-100 nameing">${chatMessages.email}</p>
+          <p>${chatMessages.chatHr}</p>
+          <small class="float-end fw-bold">${chatMessages.time}</small>
+          </div>
+
+      </div>
+      `;
+    }
+     else {
       // Display other users' messages on the left
       displayChat.innerHTML += `
       <div class="w75 w-75 float-start">
-      <div class="bg-light text-black w-25 float-start p-2 mb-2 rounded-3 bubble bgprimary1">
+      <div class="bg-light text-black w-75 float-start p-2 mb-2 rounded-3 bubble bgprimary1">
       <p class="text-danger fw-bold w-100">${chatMessages.userName}</p>
           <p>${chatMessages.chatHr}</p>
           <small class="float-start fw-bold text-black">${chatMessages.time}</small>

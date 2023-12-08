@@ -6,7 +6,7 @@
 body,html{
   background-color: rgb(236, 235, 235) !important;
   width: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h3 {
@@ -103,8 +103,9 @@ h2 {
 
 .wl100{
   width: 100vw !important;
-  padding-bottom: 2000px !important;
-  overflow: scroll;
+  /* padding-bottom: 2000px !important; */
+  max-height: 500px;
+  overflow-y: auto;
 }
 .w75>p{
   position: relative;
@@ -117,12 +118,14 @@ h2 {
 }
 .bgprimary{
   background-color: rgb(119, 1, 1);
-  max-width: 500px !important;
+  max-width: 500px ;
   word-wrap: break-word;
   height: auto;
   position: relative;
   right: 60px;
 }
+
+
 
 .bgprimary1{
   max-width: 500px !important;
@@ -144,16 +147,27 @@ h2 {
 
 @media screen and (max-width: 475px){
 
+  .mainnning>a>img{
+    width: 30px;
+    height: 30px;
+  }
+  .mainnning>a>svg{
+    width: 30px;
+    height: 30px;
+  }
+
 
   h3 {
     
     display: none;
   }
-  h2 {
-    font-family: "Nrvsbrkdwn", sans-serif;
-    letter-spacing: 6px;
+   h2 {
+    font-family: "Nrvsbrkdwn", sans-serif !important;
     color:  white;
-    font-size: 18px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    letter-spacing: 0px !important;
+
   }
   .signlogo{
    width: 33px;
@@ -166,7 +180,7 @@ h2 {
     align-items: center;
     padding: 10px 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.295);
-    background-color: rgb(148, 1, 1);
+    background-color: #940101;
     color: white;
   }
   #display{
@@ -210,10 +224,39 @@ h2 {
   
 
   .chatUs{
-    display: none;
+    display: block;
+  }
+  .containerheight{
+    height: 85vh !important;
+    width: 100% !important;
+    /* background-color: black; */
   }
   .main1{
     display: block;
   }
-  
+  .w753{
+    width: 120% !important;
+  }
+  .bgprimary{
+  background-color: rgb(119, 1, 1);
+  max-width: 600px !important;
+  word-wrap: break-word;
+  height: auto;
+  position: relative;
+  right: 20px;
+}
+
+.minus1{
+  width: 10px;
+  border: 2px solid rgb(0, 84, 158);
+  position: relative;
+  left: -50px;
+}
+.minus2{
+  width: 10px;
+  border: 2px solid rgb(0, 84, 158);
+  position: relative;
+  right: 120px;
+}
+
 }
