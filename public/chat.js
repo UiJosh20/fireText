@@ -163,7 +163,6 @@ onValue(chatRef, (snapshot) => {
           <p>${chatMessages.chatHr}</p>
           <small class="float-end fw-bold">${chatMessages.time}</small>
           </div>
-
       </div>
       `;
     }else if(chatMessages.userName == undefined){
@@ -191,6 +190,18 @@ onValue(chatRef, (snapshot) => {
         </div>
       </div>
       `;
+
+      if (chatMessages.email !== null){
+        displayChat.innerHTML += `
+        <div class="w75 w-75 float-start">
+        <div class="bg-light text-black w-75 float-start p-2 mb-2 rounded-3 bubble bgprimary1">
+        <p class="text-danger fw-bold w-100">${chatMessages.userName}</p>
+            <p>${chatMessages.chatHr}</p>
+            <small class="float-start fw-bold text-black">${chatMessages.time}</small>
+          </div>
+        </div>
+        `;
+      }
     }
   })
  
